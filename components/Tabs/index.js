@@ -39,8 +39,9 @@ function Topic(topicData) {
 
     let Tab = document.createElement('div');
     Tab.classList.add('tab');
-        let tabTopic = document.querySelector('.topics')
-        tabTopic.textContent = topicData;
+    
+    let tabTopic = document.querySelector('.topics')
+    tabTopic.textContent = topicData;
 
         return tabTopic;
 
