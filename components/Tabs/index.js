@@ -34,7 +34,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     //             cardsContainer.append(Article(articleBlock));
 
 
-    const tabTopic = document.querySelector('.topics');
+    const topicContainer = document.querySelector('.topics');
 
 
     // axios.get('https://lambda-times-backend.herokuapp.com/topics')
