@@ -12,37 +12,51 @@
 // and append it to the DOM inside the div.header-container
 
 
+
+
+
+
+
+
+
+
 function Header(dateData, titleData, tempData) {
 
+  const header = document.createElement('div');
+  const date = document.createElement('span');
+  const title = document.createElement('h1');
+  const temp =document.createElement('span');
 
-    let headerDiv = document.createElement('div');
-    headerDiv.classList.add('header');
 
-    let headerDate = document.createElement('span');
-    headerDate.classList.add('date');
-    headerDate.textContent = dateData;
-    headreDiv.appendChild(headerDate);
-      
-    let headerTitle = document.createElement('h1');
-    headerTitle.textContent = titleData;
-    headerDiv.appendChild(headerTitle);
+  header.append(date);
+  header.append(title);
+  header.append(temp);
 
-    let headerTemp = document.createElement('span');
-    headerTemp.classList.add('temp');
-    headerTemp.textContent = tempData;
-    headerDiv.appendChild(headerTemp);
-
-   
-   
-    return headerDiv;
-  }
   
+  header.classList.add('header');
+  date.classList.add('date');
+  temp.classList.add('temp');
+
+
+  date.textContent = dateData;
+  title.textContent = titleData;
+  temp.textContent = tempData;
+
+
+  return header;
+}
+
   
+const headerContainer = document.querySelector('.header-container');
+
+headerContainer.append(Header('June 12, 2020', 'Lambda Times', '97°'));
+
   
-  let headerContainer = document.querySelector('.header-container');
-//   data.forEach( header => {
-//     let newH = Header(header);
-    headerContainter.appendChild(Header('JUNE 12, 2020', 'Lambda Times', '98'));;
-//   });
+//   const headerContainer = document.querySelector('.header-container');
+
+// //   data.forEach( header => {
+// //     let newH = Header(header);
+//     headerContainter.append(Header('JUNE 12, 2020', 'Lambda Times', '98'));
+// //   });
   
   

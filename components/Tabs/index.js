@@ -8,13 +8,13 @@
 //  Each tab should look like this:
 //    <div class="tab">topic here</div>
 
-    // const articlesObj = response.data.articles;
-    // for(var prop in articlesObj) {
-    //     if(articlesObj.hasOwnProperty(prop)) {
-    //         articlesObj[prop].forEach(articleBlock => {
-    //             cardsContainer.append(Article(articleBlock));
-
-
+// axios.get('https://lambda-times-backend.herokuapp.com/topics')
+//     .then(response => {
+//         console.log(response.data)
+//     })
+//     .catch(error => {
+//         console.error(error)
+//     }) 
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
@@ -24,27 +24,48 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
         })
     })
     .catch(error => {
-        console.log("404 not found", error);
+        console.log("not found", error);
     })
 
+    // const articlesObj = response.data.articles;
+    // for(var prop in articlesObj) {
+    //     if(articlesObj.hasOwnProperty(prop)) {
+    //         articlesObj[prop].forEach(articleBlock => {
+    //             cardsContainer.append(Article(articleBlock));
+
+
+    const tabTopic = document.querySelector('.topics');
+
+
+    // axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    // .then(response => {
+    //     // console.log(response.data.topics);
+    //     // response.data.topics.forEach(topic => {
+    //     //     tabTopic.appendChild(Topic(topic));
+    //     // })
+    // const data = response.data.topics
+    // data.forEach(response => topics.appendChild(tabbTopic(response)))   
+
+    // })    
+    // .catch(error => {
+    //     console.log("Sigh, Why doesn't it work?!! 为什么", error);
+    // })
+// function with foreach append to element
 
 
 
 
 
+    function Topic(topicData) {
+
+        const topicTab = document.createElement('div');
+        topicTab.classList.add('tab');
+        topicTab.textContent = topicData;
+
+        return topicTab;
+    }
 
 
 
-function Topic(topicData) {
-
-    let Tab = document.createElement('div');
-    Tab.classList.add('tab');
-    
-    let tabTopic = document.querySelector('.topics')
-    tabTopic.textContent = topicData;
-
-        return tabTopic;
 
 
-
-}
